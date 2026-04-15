@@ -23,7 +23,7 @@ import { DatePipe } from '@angular/common';
             (ngModelChange)="selectedSort.set($event); loadCharacters()"
             optionLabel="label" 
             optionValue="value"
-            class="cartoon-dropdown">
+            styleClass="cartoon-dropdown">
           </p-dropdown>
           <button routerLink="/characters/new" class="cartoon-btn">➕ Nuevo</button>
         </div>
@@ -89,8 +89,28 @@ import { DatePipe } from '@angular/common';
       border-radius: var(--border-radius-sm);
       font-family: 'Nunito', sans-serif;
       box-shadow: var(--cartoon-shadow);
-      background: var(--color-surface);
+      background: var(--color-cloud);
     }
+
+    /* Para las opciones de la lista desplegable */
+:host ::ng-deep .p-select-option,
+:host ::ng-deep .p-dropdown-item {
+    color: white !important;
+    font-weight: bold !important;
+}
+
+/* Si quieres que al pasar el mouse (hover) o seleccionar se mantenga o cambie */
+:host ::ng-deep .p-select-option:hover,
+:host ::ng-deep .p-select-option.p-highlight {
+    color: white !important; /* Asegura que el texto siga blanco sobre el fondo de selección */
+}
+
+/* Por si el panel tiene un fondo claro y necesitas oscurecerlo para que el blanco se vea */
+:host ::ng-deep .p-select-overlay,
+:host ::ng-deep .p-dropdown-panel {
+    background-color:  var(--color-sky) !important; /* Cambia esto al color oscuro que prefieras */
+}
+    
   `]
 })
 export class CharacterListComponent implements OnInit {

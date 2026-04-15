@@ -37,15 +37,15 @@ VALUES
 
     ('Montgomery Burns', 'Señor Burns', 'Dueño de la Planta Nuclear', 104, 'Male', 'Burns',
      'El malvado jefe de Homer, el hombre más rico de Springfield.',
-     'https://upload.wikimedia.org/wikipedia/en/e/ee/Mr_burns.png',
+     'https://static.wikia.nocookie.net/lossimpson/images/9/9d/Charles_Montgomery_Burns.png/revision/latest?cb=20090227021502&path-prefix=es',
      'Simpson''s Roasting on an Open Fire (1989)', NOW(), NOW()),
 
     ('Ned Flanders', 'Neddie', 'Dueño de Leftorium', 60, 'Male', 'Flanders',
      'El amable y religioso vecino de los Simpson.',
-     'https://upload.wikimedia.org/wikipedia/en/b/bb/Ned_Flanders.png',
+     'https://static.wikia.nocookie.net/simpsons/images/8/84/Ned_Flanders.png/revision/latest?cb=20201222215900',
      'Simpson''s Roasting on an Open Fire (1989)', NOW(), NOW()),
 
     ('Apu Nahasapeemapetilon', 'Apu', 'Empleado del Kwik-E-Mart', 40, 'Male', 'Nahasapeemapetilon',
      'El hindú dueño de la tienda Kwik-E-Mart.',
-     'https://upload.wikimedia.org/wikipedia/en/e/e5/Apu_Kwik_E_Mart.png',
+     'https://static.wikia.nocookie.net/lossimpson/images/7/7d/Apu_Nahasapeemapetilon.png/revision/latest?cb=20111127113228&path-prefix=es',
      'The Telltale Head (1990)', NOW(), NOW());

@@ -19,7 +19,7 @@ import { Component } from '@angular/core';
       padding: 1.5rem;
       border-top: var(--cartoon-border);
       position: relative;
-      z-index: 10;
+      z-index: 1;
     }
     .footer-content p {
       margin: 0.5rem 0;

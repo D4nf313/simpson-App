@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* Fallback o fuente Simpson genérica */
+@font-face {
+  font-family: 'Simpsonfont';
+  /* Usaremos Luckiest Guy de Google Fonts como la fuente predominante para mayor calidad y estabilidad */
+  src: local('Simpsonfont');
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6, .cartoon-text, .p-dialog-title {
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 1px;
+}

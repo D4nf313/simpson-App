@@ -1,0 +1,53 @@
+.cartoon-card {
+  background-color: var(--color-surface);
+  border: var(--cartoon-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--cartoon-shadow) !important;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--cartoon-shadow-hover) !important;
+  }
+}
+
+.cartoon-btn {
+  background-color: var(--color-primary);
+  border: var(--cartoon-border) !important;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--cartoon-shadow) !important;
+  color: var(--color-dark) !important;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease-in;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--cartoon-shadow-hover) !important;
+    background-color: var(--color-primary-dark);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: none !important;
+  }
+
+  &.secondary {
+    background-color: var(--color-secondary);
+    color: white !important;
+    
+    &:hover {
+      background-color: var(--color-secondary-dark);
+    }
+  }
+
+  &.danger {
+    background-color: var(--color-accent);
+    color: white !important;
+  }
+}

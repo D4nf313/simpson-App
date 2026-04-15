@@ -1,0 +1,18 @@
+:root {
+  --color-primary: #FFD90F; /* Amarillo Simpson */
+  --color-primary-dark: #e8c600;
+  --color-secondary: #1B6CA8; /* Azul Springfield */
+  --color-secondary-dark: #124b75;
+  --color-accent: #E8390E; /* Rojo Homer */
+  --color-sky: #87CEEB; /* Cielo Springfield */
+  --color-cloud: #FFFFFF; /* Nubes */
+  --color-dark: #1A1A1A; /* Outline cartoon */
+  --color-surface: #FFF9E6; /* Fondo cálido */
+  --color-text: #2D2D2D; /* Texto principal */
+
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --cartoon-border: 3px solid var(--color-dark);
+  --cartoon-shadow: 4px 4px 0px var(--color-dark);
+  --cartoon-shadow-hover: 6px 6px 0px var(--color-dark);
+}

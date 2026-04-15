@@ -1,0 +1,307 @@
+{
+    "info": {
+        "name": "Los Simpsons API",
+        "description": "Colección de endpoints REST para el microservicio de personajes de Los Simpsons.\nBase URL: http://localhost:8080/api/v1",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "http://localhost:8080/api/v1",
+            "type": "string"
+        },
+        {
+            "key": "characterId",
+            "value": "1",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Characters",
+            "item": [
+                {
+                    "name": "1 - Crear personaje (POST)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/characters",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n \"name\": \"Homer Simpson\",\n \"alias\": \"Homer\",\n \"occupation\": \"Nuclear Safety Inspector\",\n \"age\": 39,\n \"gender\": \"Male\",\n \"family\": \"Simpson\",\n \"description\": \"Padre de familia, aficionado a la cerveza Duff y las donas.\",\n \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png\",\n \"firstAppearance\": \"Good Night (1989)\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "Crea un nuevo personaje. Devuelve 201 con el personaje creado."
+                    }
+                },
+                {
+                    "name": "2 - Obtener personaje por ID (GET)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{baseUrl}}/characters/{{characterId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters",
+                                "{{characterId}}"
+                            ]
+                        },
+                        "description": "Obtiene un personaje por ID. Segunda llamada viene de caché (Caffeine)."
+                    }
+                },
+                {
+                    "name": "3 - Listar todos (GET, sin filtros)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{baseUrl}}/characters?page=0&size=10&sortBy=name&sortDir=asc",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters"
+                            ],
+                            "query": [
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "10"
+                                },
+                                {
+                                    "key": "sortBy",
+                                    "value": "name"
+                                },
+                                {
+                                    "key": "sortDir",
+                                    "value": "asc"
+                                }
+                            ]
+                        },
+                        "description": "Devuelve todos los personajes paginados y ordenados por nombre."
+                    }
+                },
+                {
+                    "name": "4 - Filtrar por familia (GET)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{baseUrl}}/characters?family=Simpson&sortBy=age&sortDir=asc&page=0&size=10",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters"
+                            ],
+                            "query": [
+                                {
+                                    "key": "family",
+                                    "value": "Simpson"
+                                },
+                                {
+                                    "key": "sortBy",
+                                    "value": "age"
+                                },
+                                {
+                                    "key": "sortDir",
+                                    "value": "asc"
+                                },
+                                {
+                                    "key": "page",
+                                    "value": "0"
+                                },
+                                {
+                                    "key": "size",
+                                    "value": "10"
+                                }
+                            ]
+                        },
+                        "description": "Filtra personajes de la familia Simpson, ordenados por edad ascendente."
+                    }
+                },
+                {
+                    "name": "5 - Filtrar por nombre (GET)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{baseUrl}}/characters?name=bart&sortBy=name&sortDir=asc",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters"
+                            ],
+                            "query": [
+                                {
+                                    "key": "name",
+                                    "value": "bart"
+                                },
+                                {
+                                    "key": "sortBy",
+                                    "value": "name"
+                                },
+                                {
+                                    "key": "sortDir",
+                                    "value": "asc"
+                                }
+                            ]
+                        },
+                        "description": "Busca personajes cuyo nombre contiene 'bart' (case insensitive)."
+                    }
+                },
+                {
+                    "name": "6 - Filtrar por género + ocupación (GET)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{baseUrl}}/characters?gender=Female&occupation=Estudiante&sortBy=age&sortDir=asc",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters"
+                            ],
+                            "query": [
+                                {
+                                    "key": "gender",
+                                    "value": "Female"
+                                },
+                                {
+                                    "key": "occupation",
+                                    "value": "Estudiante"
+                                },
+                                {
+                                    "key": "sortBy",
+                                    "value": "age"
+                                },
+                                {
+                                    "key": "sortDir",
+                                    "value": "asc"
+                                }
+                            ]
+                        },
+                        "description": "Combina filtros de género y ocupación."
+                    }
+                },
+                {
+                    "name": "7 - Actualizar personaje (PUT)",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/characters/{{characterId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters",
+                                "{{characterId}}"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n \"name\": \"Homer J. Simpson\",\n \"alias\": \"Homer\",\n \"occupation\": \"Nuclear Safety Inspector\",\n \"age\": 40,\n \"gender\": \"Male\",\n \"family\": \"Simpson\",\n \"description\": \"Versión actualizada de Homer.\",\n \"imageUrl\": \"https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png\",\n \"firstAppearance\": \"Good Night (1989)\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "Actualiza todos los campos del personaje con el ID indicado."
+                    }
+                },
+                {
+                    "name": "8 - Eliminar personaje (DELETE)",
+                    "request": {
+                        "method": "DELETE",
+                        "url": {
+                            "raw": "{{baseUrl}}/characters/{{characterId}}",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters",
+                                "{{characterId}}"
+                            ]
+                        },
+                        "description": "Elimina el personaje y limpia su entrada en caché. Devuelve 204 No Content."
+                    }
+                },
+                {
+                    "name": "9 - ERROR: ID inexistente (GET 404)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "{{baseUrl}}/characters/9999",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters",
+                                "9999"
+                            ]
+                        },
+                        "description": "Prueba el manejo de error 404 cuando el personaje no existe."
+                    }
+                },
+                {
+                    "name": "10 - ERROR: Crear con nombre vacío (POST 400)",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/characters",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "characters"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n \"name\": \"\",\n \"age\": -5\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "description": "Prueba validación: nombre vacío y edad negativa → 400 Bad Request con detalle de errores."
+                    }
+                }
+            ]
+        }
+    ]
+}

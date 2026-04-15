@@ -1,0 +1,20 @@
+/* Importaciones de PrimeNG */
+/* Importaciones de dependencias */
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+/* Sistema de estilos de Los Simpsons */
+@import "styles/variables";
+@import "styles/typography";
+@import "styles/clouds";
+@import "styles/cartoon";
+
+/* Reset global */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  /* Aplicar fondo global, las nubes irán aquí o en el layout base */
+  background-color: var(--color-sky);
+}

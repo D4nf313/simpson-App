@@ -23,7 +23,6 @@ import { Component } from '@angular/core';
       border-bottom: var(--cartoon-border);
       position: sticky;
       top: 0;
-      z-index: 100;
       transition: all 0.3s ease; /* Suaviza el cambio de tamaño */
     }
 

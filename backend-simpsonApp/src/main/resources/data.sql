@@ -1,12 +1,5 @@
--- SQL script to initialise the simpsons_db database
--- Run this before the first application startup
-
-CREATE DATABASE IF NOT EXISTS simpsons_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE simpsons_db;
-
--- The 'characters' table is auto-created by Hibernate (ddl-auto=update).
--- This script seeds initial data for quick testing.
+-- Seed data for simpsons_db. TRUNCATE ensures idempotent restarts.
+TRUNCATE TABLE characters RESTART IDENTITY;
 
 INSERT INTO characters (name, alias, occupation, age, gender, family, description, image_url, first_appearance, created_at, updated_at)
 VALUES

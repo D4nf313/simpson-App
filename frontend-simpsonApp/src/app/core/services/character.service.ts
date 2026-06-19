@@ -2,13 +2,14 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Character, CharacterRequestDTO, PageResponse } from '../models/character.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:8080/api/v1/characters';
+  private apiUrl = `${environment.apiUrl}/characters`;
 
   getAllCharacters(page: number = 0, size: number = 20, sortDir: string = 'desc', sortBy: string = 'createdAt', nameFilter?: string): Observable<PageResponse<Character>> {
     let params = new HttpParams()
